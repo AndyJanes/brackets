@@ -359,7 +359,7 @@
 }
 
 .modal-header {
-    border-bottom: 1px solid rgba(0,0,0,0.09);
+    border-bottom: 1px solid @tc-gray-panel-separator;
 }
 
 .modal-body, .modal-header {
@@ -372,7 +372,7 @@
 .modal-footer {
     text-align: right;
     background-color: @tc-gray-panel;
-    border-top: 1px solid rgba(0,0,0,0.09);
+    border-top: 1px solid @tc-gray-panel-separator;
     box-shadow: none;
     white-space: nowrap;
 }
@@ -694,14 +694,11 @@ input[type="color"],
     .box-shadow(@tc-input-inner-shadow);
     .transition(~"border linear 0s, box-shadow linear 0s");
     
-    // Placeholder text gets special styles; can't be bundled together though for some reason
     &::-webkit-input-placeholder {
         color: @tc-input-placeholder-text;
     }    
 
-    // Focus states (we use .focused since IE8 and down doesn't support :focus)
-    &:focus,
-    &.focused {
+    &:focus {
         outline: 0;
         background-color: @tc-input-background;
         color: @tc-text;
