@@ -672,29 +672,46 @@
 }
 
 /* Input */
-input, textarea {
-    background-color: #fff;
-    border: 1px solid #9c9e9e;
-    .border-radius(3px);
-    @shadow: inset 0 1px 0 rgba(0, 0, 0, 0.12);
-
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    background-color: @tc-input-background;
+    border: 1px solid @tc-input-border;
+    .border-radius(@tc-control-border-radius);
+    .box-shadow(@tc-input-inner-shadow);
+    .transition(~"border linear 0s, box-shadow linear 0s");
+    
     // Placeholder text gets special styles; can't be bundled together though for some reason
     &::-webkit-input-placeholder {
-        color: #888;
-    }
+        color: @tc-input-placeholder-text;
+    }    
+
     // Focus states (we use .focused since IE8 and down doesn't support :focus)
     &:focus,
     &.focused {
         outline: 0;
-        background-color: #fff;
-        color: #000;
+        background-color: @tc-input-background;
+        color: @tc-text;
         text-shadow: none;
         border: 1px solid @tc-gray-component-focused-border;
-        box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.12), 0 0 0 2px #6fb5f1;
+        box-shadow: @tc-input-inner-shadow, @tc-input-glow;
     }
     
     &:disabled {
-        opacity: 0.3;
+        opacity: @tc-disabled-opacity;
         cursor: default;
     }
 }
