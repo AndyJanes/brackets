@@ -504,7 +504,7 @@
 }
 
 .project-settings-dialog .modal-body input.url {
-    margin: 10px;
+    margin: 10px 10px 10px 5px;
     width: 400px;
 }
 
@@ -589,7 +589,7 @@
                 font-weight: @font-weight-light;
             }
             .ext-desc {
-                color: #222;
+                color: #000;
                 font-weight: @font-weight-light;
                 width: auto;
             }
@@ -705,6 +705,8 @@ input[type="color"],
     
     &::-webkit-input-placeholder {
         color: @tc-input-placeholder-text;
+        font-weight: normal;
+        -webkit-font-smoothing: antialiased;
     }    
 
     &:focus {
@@ -851,4 +853,8 @@ strong {
 code {
   color: @bc-black;
   background-color: transparent;
+}
+
+label {
+    font-size: @label-font-size;
 }
